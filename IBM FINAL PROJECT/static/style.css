@@ -1,0 +1,70 @@
+body {
+    background-image: url('/static/New.jpg'); /* Use the absolute path to the static folder */
+    background-size: cover; /* This will cover the entire background */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    color: white; /* Change text color to white for better contrast */
+    font-family: Arial, sans-serif; /* Use a standard font */
+}
+
+
+header {
+    text-align: center;
+    background-color: #4CAF50; /* Green background for the header */
+    color: white;
+    padding: 10px 0;
+}
+
+h1 {
+    margin: 0;
+}
+
+.header-image {
+    width: 100%; /* Make the image responsive */
+    max-width: 400px; /* Limit the maximum width */
+    height: auto; /* Keep aspect ratio */
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input[type="number"], input[type="submit"] {
+    margin-top: 5px;
+    padding: 8px;
+    width: calc(100% - 16px); /* Full width minus padding */
+    border-radius: 5px; /* Rounded corners */
+    border: 1px solid #ccc; /* Light border */
+}
+
+.calculator-form {
+    max-width: 500px; /* Limit the width of the form */
+    margin: 0 auto; /* Center the form */
+}
+
+.submit-button {
+    background-color: #4CAF50; /* Green background for the button */
+    color: white; /* White text */
+    border: none; /* No border */
+    cursor: pointer; /* Pointer cursor */
+    font-size: 16px; /* Increase font size */
+    padding: 10px; /* Add padding */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.button {
+    display: inline-block;
+    background-color: #4CAF50; /* Green background for links */
+    color: white; /* White text */
+    padding: 10px 15px; /* Add padding */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* No underline */
+    margin-top: 20px; /* Space above the button */
+}
+
+.button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+

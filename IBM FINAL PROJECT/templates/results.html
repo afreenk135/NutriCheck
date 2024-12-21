@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>NutriCheck Results</title>
+    <style>
+        /* Background and body styling */
+        body {
+            background-image: url('/static/New.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #333333;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            position: relative; /* Enable absolute positioning of child elements */
+        }
+        /* Container styling */
+        .result-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+        /* Heading style */
+        h1 {
+            font-weight: bold;
+            font-size: 2em;
+            color: #333333;
+            margin-bottom: 20px;
+        }
+        /* Result styling */
+        .result {
+            font-size: 1.5em;
+            margin: 20px 0;
+            color: #333333;
+        }
+        /* Diet suggestions styling */
+        .suggestions {
+            font-size: 1.2em;
+            color: #555555;
+            margin: 20px 0;
+        }
+        /* Button styling */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: white;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            margin: 5px; /* Space between buttons */
+        }
+        .btn:hover {
+            background-color: #388E3C;
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <h1>Malnutrition Risk Result</h1>
+        <div class="result">
+            Your Malnutrition Risk Score: <strong>{{ risk_score }}</strong>
+        </div>
+        <div class="suggestions">
+            {% if risk_score <= 3 %}
+                <p>Risk Level: Low</p>
+                <p>Diet Suggestions: Ensure a balanced diet with fruits, vegetables, and whole grains.</p>
+            {% elif risk_score <= 6 %}
+                <p>Risk Level: Moderate</p>
+                <p>Diet Suggestions: Include more protein-rich foods like beans, lentils, and dairy products.</p>
+            {% else %}
+                <p>Risk Level: High</p>
+                <p>Diet Suggestions: Consult a healthcare provider for a personalized dietary plan.</p>
+            {% endif %}
+        </div>
+        <a href="{{ url_for('calculator') }}" class="btn">Calculate Again</a>
+    </div>
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriCheck Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* Background and body styling */
+        body {
+            background-image: url('/static/New.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #333333;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        /* Container styling */
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+        /* Heading style */
+        h1 {
+            font-weight: bold;
+            font-size: 2em;
+            color: #333333;
+            margin-bottom: 20px;
+        }
+        /* Form input styling */
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        label {
+            font-size: 1.1em;
+            margin-bottom: 5px;
+            color: #555555;
+        }
+        input[type="number"],
+        input[type="text"],
+        select {
+            padding: 10px;
+            font-size: 1em;
+            border-radius: 5px;
+            border: 1px solid #cccccc;
+            width: 100%;
+        }
+        /* Button styling */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: white;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background-color: #388E3C;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Malnutrition Risk Calculator</h1>
+        <form action="{{ url_for('calculator') }}" method="POST">
+            <!-- Age input -->
+            <div class="form-group">
+                <label for="age">Age (months):</label>
+                <input type="number" id="age" name="age" min="0" max="59" required>
+            </div>
+            <!-- Height input -->
+            <div class="form-group">
+                <label for="height">Height (cm):</label>
+                <input type="number" id="height" name="height" min="30" max="120" required>
+            </div>
+            <!-- Weight input -->
+            <div class="form-group">
+                <label for="weight">Weight (kg):</label>
+                <input type="number" id="weight" name="weight" min="2" max="30" step="0.1" required>
+            </div>
+            <!-- Diet quality score input -->
+            <div class="form-group">
+                <label for="diet_quality">Diet Quality Score (0-10):</label>
+                <input type="number" id="diet_quality" name="diet_quality" min="0" max="10" required>
+            </div>
+            <!-- Submit button -->
+            <button type="submit" class="btn">Calculate Risk</button>
+        </form>
+    </div>
+</body>
+</html>
+
+
